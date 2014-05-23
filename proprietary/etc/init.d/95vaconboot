@@ -1,13 +1,16 @@
 #!/system/bin/sh
 # =================================================
 # SQLite3 Vaccuum on init.d script run every 1 week
+# ...or as often as you would like to choose.
 # =================================================
 
 # SQLite database vaccum
-
-# Frequent inserts, updates, and deletes can cause the database file to become fragmented - where data for a single table or index is scattered around the database file.
-# Running VACUUM ensures that each table and index is largely stored contiguously within the database file.
-# In some cases, VACUUM may also reduce the number of partially filled pages in the database, reducing the size of the database file further.
+#
+# WHY DO I NEED THIS:
+# Frequent changes (add, change, delete) can cause database files to become fragmented...
+# where data, for a single database table, can be stored on different memory blocks & pages spread out from each other, causing a waste of space and slower reading of the database.
+# Running sqlite3 VACUUM ensures that each database file is written in adjoining memory blocks/pages.
+# VACUUM may also reduce the number of partially filled pages in the database, thereby reducing the total size of the database file.
 
 # Log file location
 LOG_FILE=/data/sqlite.log
@@ -28,7 +31,7 @@ CURRDATE=`date +%s`
 # Check the interval
 INTERVAL=$(expr $CURRDATE - $LASTRUN)
 
-# If interval is more than the set one, then run the main script
+# If INTERVAL is greater than the RUN_EVERY time period, run the main script.
 if [ $INTERVAL -gt $RUN_EVERY ];
 then
 	if [ -e $LOG_FILE ]; then
@@ -58,3 +61,4 @@ then
 	  
 	echo "SQLite database VACUUM and REINDEX finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
 fi;
+
