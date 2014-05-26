@@ -3,7 +3,7 @@ PRODUCT_PACKAGES += \
     Apollo \
     PerformanceControl
 
-RESERVED= \
+RESERVED=""
 
 # My build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -93,7 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.composition.type=gpu \
     ro.opengles.version=196608 \
     ro.hwui.use_gpu_pixel_buffers=true \
-    ro.hwui.disable_scissor_opt=true \
     ro.hwui.texture_cache_size=72 \
     ro.hwui.layer_cache_size=48 \
     ro.hwui.r_buffer_cache_size=8 \
