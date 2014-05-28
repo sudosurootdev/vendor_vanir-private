@@ -1,7 +1,6 @@
 # Build packages from Private.mk
 PRODUCT_PACKAGES += \
-    Apollo \
-    PerformanceControl
+    Apollo
 
 RESERVED=""
 
