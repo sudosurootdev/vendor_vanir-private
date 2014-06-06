@@ -92,7 +92,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     video.accelerate.hw=1 \
     persist.sys.composition.type=gpu \
     ro.opengles.version=196608 \
-    ro.hwui.use_gpu_pixel_buffers=true \
     ro.hwui.texture_cache_size=72 \
     ro.hwui.layer_cache_size=48 \
     ro.hwui.r_buffer_cache_size=8 \
@@ -114,7 +113,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.allow.mock.locations=1 \
     ro.allow.mock.sms=1 \
     persist.service.adb.enable=1 \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=adb
 
 # WiFi Reserved Properties
 PRODUCT_PROPERTY_OVERRIDES += \
