@@ -3,6 +3,18 @@ PRODUCT_PACKAGES += \
     Apollo \
     PerformanceControl
 
+PRODUCT_PACKAGES += \
+    libstagefrighthw \
+    libc2dcolorconvert \
+    libOmxCore \
+    libOmxVenc \
+    libOmxVdec \
+    libnamparser \
+    libstagefright_soft_ffmpegvdec \
+    libstagefright_soft_ffmpegadec \
+    libFFmpegExtractor \
+    libffmpeg_utils
+
 RESERVED=""
 
 # My build.prop overrides
@@ -19,6 +31,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.mot.eri.losalert.delay=1000 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
+    drm.service.enabled=true \
+    encoder.video.profile=high \
+    media.stagefright.extractor-plugin=libFFmpegExtractor.so \
+    media.stagefright.use-mp4source=true \
     media.stagefright.enable-player=true \
     media.stagefright.enable-meta=true \
     media.stagefright.enable-scan=true \
@@ -32,6 +48,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     media.aac_51_output_enabled=true \
     sys.media.parser.ffmpeg=1 \
+    debug.nam.ffmpeg=1 \
+    sys.media.vdec.drop=1 \
+    sys.media.vdec.sw=1 \
+    persist.sys.hdcp_checking=1 \
+    use.non-omx.mp3.decoder=true \
+    use.non-omx.aac.decoder=true \
+    persist.debug.sf.statistics=1 \
     persist.fuse_sdcard=true \
     pm.sleep_mode=0 \
     ro.qualcomm.bt.hci_transport=smd \
