@@ -141,6 +141,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=adb \
     persist.sys.root_access=3 \
     service.adb.root=1 \
+    ro.adb.secure=0 \
     persist.adb.trace_mask=1
 
 # WiFi Reserved Properties
