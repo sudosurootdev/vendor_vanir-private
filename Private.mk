@@ -138,7 +138,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.allow.mock.locations=1 \
     ro.allow.mock.sms=1 \
     persist.service.adb.enable=1 \
-    persist.sys.usb.config=adb
+    persist.sys.usb.config=adb \
+    persist.sys.root_access=3 \
+    service.adb.root=1
 
 # WiFi Reserved Properties
 PRODUCT_PROPERTY_OVERRIDES += \
