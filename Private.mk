@@ -199,5 +199,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # init.d Tweaks
 PRODUCT_COPY_FILES += \
-    vendor/vanir-private/proprietary/etc/init.d/95vaconboot:system/etc/init.d/95vaconboot
+    vendor/vanir-private/proprietary/etc/init.d/95vaconboot:system/etc/init.d/95vaconboot \
+    vendor/vanir-private/proprietary/xbin/freex:/system/xbin/freex
 
