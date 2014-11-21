@@ -114,7 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     otaupdater.otaid=sudosurootdev \
-    otaupdater.otaver=4.4.4-vanir-ssroot \
+    otaupdater.otaver=5.0.0-vanir-ssroot \
     otaupdater.otatime=$(shell date +"%Y%M%d-%H%M")
 
 # init.d Tweaks & xbin files
