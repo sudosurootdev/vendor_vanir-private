@@ -1,9 +1,9 @@
 # Build packages from Private.mk
-PRODUCT_PACKAGES += \
-    PerformanceControl #\
-    AndroidTerm \
-    libjackpal-androidterm5 \
-    Github
+# PRODUCT_PACKAGES += \
+    # PerformanceControl \
+    # AndroidTerm \
+    # libjackpal-androidterm5 \
+    # Github
 
 RESERVED=""
 
@@ -28,16 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.enable.a52=1 \
     ro.ril.enable.a53=1 \
     ro.ril.enable.dtm=1 \
-    net.tcp.buffersize.default=4096,87380,110208,4096,16384,110208 \
-    net.tcp.buffersize.wifi=262144,524288,1048576,262144,524288,1048576 \
-    net.tcp.buffersize.lte=262144,524288,3145728,262144,524288,3145728 \
-    net.tcp.buffersize.evdo_b=6144,262144,1048576,6144,262144,1048576 \
-    net.tcp.buffersize.umts=4096,87380,110208,4096,16384,110208 \
-    net.tcp.buffersize.hsdpa=6144,262144,1048576,6144,262144,1048576 \
-    net.tcp.buffersize.hspa=4096,87380,262144,4096,16384,262144 \
-    net.tcp.buffersize.hsupa=4094,87380,110208,4096,16384,110208 \
-    net.tcp.buffersize.gprs=6144,8760,11680,4096,8760,11680 \
-    net.tcp.buffersize.edge=6144,26280,35040,4096,16384,35040 \
     persist.android.strictmode=0 \
     persist.sys.use_dithering=1 \
     persist.sys.ui.hw=true \
