@@ -7,6 +7,8 @@
 
 RESERVED=""
 
+ifneq ($(filter $(TARGET_DEVICE),d800 d801 d802 d803 vs980 ls980),)
+
 # My build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=400 \
@@ -91,6 +93,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.wlan0.dns1=$(RESERVED) \
     net.wlan0.dns2=$(RESERVED) \
     wlan.driver.status=$(RESERVED)
+
+else
+
+# Common build.prop overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=adb \
+    persist.sys.root_access=3 \
+    service.adb.root=1 \
+    ro.adb.secure=0 \
+    net.dns1=8.8.8.8 \
+    net.dns2=8.8.4.4 \
+    pm.sleep_mode=0
+
+endif
 
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
