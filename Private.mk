@@ -119,6 +119,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # init.d Tweaks & xbin files
 PRODUCT_COPY_FILES += \
-    vendor/vanir-private/proprietary/etc/init.d/95vaconboot:system/etc/init.d/95vaconboot \
+    vendor/vanir-private/proprietary/etc/init.d/95VacnPerms:system/etc/init.d/95VacnPerms \
     vendor/vanir-private/proprietary/xbin/freex:/system/xbin/freex \
     vendor/vanir-private/proprietary/xbin/calibrate-battery:/system/xbin/calibrate-battery
