@@ -114,8 +114,11 @@ endif
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     otaupdater.otaid=sudosurootdev \
-    otaupdater.otaver=5.0.1-vanir-ssroot \
-    otaupdater.otatime=$(shell date +"%Y%M%d-%H%M")
+    otaupdater.otaver=5.0.2-vanir-$(shell date +"%Y%M%d") \
+    otaupdater.otatime=$(shell date +"%Y%M%d-%H%M") \
+    ro_product_board=galbi \
+    ro_afh_rom=5.0.2-vanir-sudosurootdev \
+    ro_afh_version=$(shell date +"%Y%M%d")
 
 # init.d Tweaks & xbin files
 PRODUCT_COPY_FILES += \
