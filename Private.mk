@@ -7,47 +7,19 @@
 
 RESERVED=""
 
-ifneq ($(filter $(TARGET_DEVICE),d800 d801 d802 d803 vs980 ls980),)
-
 # My build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
-    windowsmgr.max_events_per_sec=400 \
-    persist.fuse_sdcard=true \
-    pm.sleep_mode=0 \
-    ro.ril.hsxpa=5 \
-    ro.ril.gprsclass=34 \
-    ro.ril.hep=1 \
-    ro.ril.hsdpa.category=28 \
-    ro.ril.enable.3g.prefix=1 \
-    ro.ril.htcmaskw1.bitmask=4294967295 \
-    ro.ril.htcmaskw1=268449905 \
-    ro.ril.hsupa.category=9 \
-    ro.ril.def.agps.mode=1 \
-    ro.ril.def.agps.feature=2 \
-    ro.ril.enable.sdr=1 \
-    ro.ril.enable.gea3=1 \
-    ro.ril.enable.fd.plmn.prefix=23402,23410,23411 \
-    ro.ril.enable.a52=1 \
-    ro.ril.enable.a53=1 \
-    ro.ril.enable.dtm=1 \
-    persist.android.strictmode=0 \
-    persist.sys.use_dithering=1 \
-    persist.sys.ui.hw=true \
-    persist.sys.purgeable_assets=1 \
-    persist.sys.composition.type=gpu \
-    ro.min_pointer_dur=8 \
-    ro.secure=0 \
-    ro.debuggable=1 \
-    ro.allow.mock.locations=1 \
-    ro.allow.mock.sms=1 \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=adb \
     persist.sys.root_access=3 \
     service.adb.root=1 \
-    ro.adb.secure=0
+    ro.secure=0 \
+    ro.debuggable=1 \
+    ro.adb.secure=0 \
+    pm.sleep_mode=0
 
 # WiFi Reserved Properties
-PRODUCT_PROPERTY_OVERRIDES += \
+# PRODUCT_PROPERTY_OVERRIDES += \
     net.dns1=8.8.8.8 \
     net.dns2=8.8.4.4 \
     net.ppp0.dns1=$(RESERVED) \
@@ -93,23 +65,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.wlan0.dns1=$(RESERVED) \
     net.wlan0.dns2=$(RESERVED) \
     wlan.driver.status=$(RESERVED)
-
-else
-
-# Common build.prop overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.secure=0 \
-    ro.debuggable=1 \
-    persist.service.adb.enable=1 \
-    persist.sys.usb.config=adb \
-    persist.sys.root_access=3 \
-    service.adb.root=1 \
-    ro.adb.secure=0 \
-    net.dns1=8.8.8.8 \
-    net.dns2=8.8.4.4 \
-    pm.sleep_mode=0
-
-endif
 
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
