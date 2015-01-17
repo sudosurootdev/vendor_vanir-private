@@ -1,8 +1,8 @@
 #!/system/bin/sh
-# ==================================================
-# SQLite3 Vaccuum & fix_permissions on init.d script
-# run every 1 week ...or as often as you would like.
-# ==================================================
+# =================================================
+# SQLite3 Vaccuum on init.d script run every 1 week
+# ...or as often as you would like to choose.
+# =================================================
 
 # SQLite database vaccum
 #
@@ -36,10 +36,6 @@ if [ $INTERVAL -gt $RUN_EVERY ];
 then
 	if [ -e $LOG_FILE ]; then
 		rm $LOG_FILE;
-	fi;
-
-	if [ -e /system/bin/fix_permissions ]; then                             
-		/system/bin/fix_permissions                                     
 	fi;
        
 	echo "SQLite database VACUUM and REINDEX started at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
