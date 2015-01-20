@@ -7,7 +7,7 @@
 
 RESERVED=""
 
-ifneq ($(filter $(TARGET_DEVICE),d800 d801 d802 d803 vs980 ls980),)
+ifneq ($(filter $(TARGET_DEVICE),d800 d801 d802 d803 vs980 lgl22 ls980),)
 
 # My build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -119,7 +119,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     otaupdater.otaid=sudosurootdev \
     otaupdater.otaver=5.0.2-vanir-$(shell date +"%Y%M%d") \
     otaupdater.otatime=$(shell date +"%Y%M%d-%H%M") \
-    ro_product_board=galbi \
+    ro_product_board=$(TARGET_BOOTLOADER_BOARD_NAME) \
     ro_afh_rom=5.0.2-vanir-sudosurootdev \
     ro_afh_version=$(shell date +"%Y%M%d")
 
