@@ -1,5 +1,6 @@
 # Build packages from Private.mk
-# PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
+    LockClock
     # PerformanceControl \
     # AndroidTerm \
     # libjackpal-androidterm5 \
