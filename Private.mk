@@ -1,9 +1,6 @@
 # Build packages from Private.mk
 PRODUCT_PACKAGES += \
-    # PerformanceControl \
-    # AndroidTerm \
-    # libjackpal-androidterm5 \
-    # Github
+    Eleven
 
 RESERVED=""
 
