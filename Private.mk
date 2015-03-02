@@ -42,7 +42,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.allow.mock.sms=1 \
     persist.service.adb.enable=1 \
     persist.sys.root_access=3 \
-    persist.sys.usb.config=adb \
     service.adb.root=1 \
     pm.sleep_mode=0
 
@@ -101,7 +100,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.debuggable=1 \
     persist.service.adb.enable=1 \
-    persist.sys.usb.config=adb \
     persist.sys.root_access=3 \
     service.adb.root=1 \
     ro.adb.secure=0 \
