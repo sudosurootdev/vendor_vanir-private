@@ -121,5 +121,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # init.d Tweaks & xbin files
 PRODUCT_COPY_FILES += \
     vendor/vanir-private/proprietary/etc/init.d/95sqlite:system/etc/init.d/95sqlite \
-    vendor/vanir-private/proprietary/xbin/freex:/system/xbin/freex \
-    vendor/vanir-private/proprietary/xbin/calibrate-battery:/system/xbin/calibrate-battery
+    vendor/vanir-private/proprietary/xbin/freex:system/xbin/freex \
+    vendor/vanir-private/proprietary/xbin/calibrate-battery:system/xbin/calibrate-battery \
+    vendor/vanir-private/proprietary/xbin/clean-logs:system/xbin/clean-logs
+
