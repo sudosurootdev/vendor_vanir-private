@@ -115,7 +115,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     otaupdater.otaver=5.0.2-vanir-$(shell date +"%Y%M%d") \
     otaupdater.otatime=$(shell date +"%Y%M%d-%H%M") \
     ro_product_board=$(TARGET_BOOTLOADER_BOARD_NAME) \
-    ro_afh_rom=5.0.2-vanir-sudosurootdev \
+    ro_afh_rom=vanir-sudosurootdev \
     ro_afh_version=$(shell date +"%Y%M%d")
 
 # init.d Tweaks & xbin files
