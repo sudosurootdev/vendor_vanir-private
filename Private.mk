@@ -111,12 +111,10 @@ endif
 
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
-    otaupdater.otaid=sudosurootdev \
-    otaupdater.otaver=5.0.2-vanir-$(shell date +"%Y%M%d") \
-    otaupdater.otatime=$(shell date +"%Y%M%d-%H%M") \
-    ro_product_board=$(TARGET_BOOTLOADER_BOARD_NAME) \
-    ro_afh_rom=vanir-sudosurootdev \
-    ro_afh_version=$(shell date +"%Y%M%d")
+    ro_developerid=23329332407574102 \
+    ro_board=$(TARGET_BOOTLOADER_BOARD_NAME) \
+    ro_rom=sudosurootdev-vanir \
+    ro_version=$(shell date +"%Y%m%d")
 
 # init.d Tweaks & xbin files
 PRODUCT_COPY_FILES += \
