@@ -14,15 +14,19 @@
 
 # Log file location
 LOG_FILE=/data/sqlite.log
-
+LOCK_FILE=/data/sqlite.lock
 #Interval between SQLite3 runs, in seconds, 604800=1 week
 RUN_EVERY=604800
 
 # Get the last modify date of the Log file, if the file does not exist, set value to 0
-if [ -e $LOG_FILE ]; then
-	LASTRUN=`stat -t $LOG_FILE | awk '{print $14}'`
+if [ -e $LOCK_FILE ]; then
+	if [ -e $LOG_FILE ]; then
+		LASTRUN=`stat -t $LOG_FILE | awk '{print $14}'`
+	else
+		LASTRUN=0
+	fi;
 else
-	LASTRUN=0
+	touch $LOCK_FILE
 fi;
 
 # Get current date in epoch format
