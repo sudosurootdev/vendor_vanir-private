@@ -112,7 +112,7 @@ endif
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     ro_developerid=23329332407574102 \
-    ro_board=$(TARGET_BOOTLOADER_BOARD_NAME) \
+    ro_board=galbi \
     ro_rom=sudosurootdev-vanir \
     ro_version=$(shell date +"%Y%m%d")
 
