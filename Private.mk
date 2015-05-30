@@ -111,6 +111,7 @@ endif
 
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.developer.name=sudosurootdev \
     ro_developerid=23329332407574102 \
     ro_board=galbi \
     ro_rom=sudosurootdev-vanir \
