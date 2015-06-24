@@ -4,7 +4,7 @@ PRODUCT_PACKAGES += \
 
 RESERVED=""
 
-ifneq ($(filter $(TARGET_DEVICE),d800 d801 d802 d803 vs980 lgl22 ls980),)
+ifneq ($(filter $(TARGET_DEVICE),d800 d801 d802 d803 d850 d851 d852 d855 f320 f400 lgl22 lgl24 ls980 ls990 us990 vs980 vs985),)
 
 # My build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
