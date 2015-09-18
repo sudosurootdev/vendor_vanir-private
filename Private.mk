@@ -1,6 +1,5 @@
 # Build packages from Private.mk
-PRODUCT_PACKAGES += \
-    Eleven
+PRODUCT_PACKAGES +=
 
 RESERVED=""
 
@@ -112,11 +111,7 @@ endif
 # More of my build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.developer.name=sudosurootdev \
-    ro.vanir.updater.uri="https://androidfilehost.com/api" \
-    ro_developerid=23329332407574102 \
-    ro_board=galbi \
-    ro_rom=sudosurootdev-vanir \
-    ro_version="$(VANIR_VERSION)"-"$(shell date +"%Y%m%d-%s")"
+    ro.sudosurootdev.version="$(VANIR_VERSION)"-"$(shell date +"%Y%m%d-%s")"
 
 # init.d Tweaks & xbin files
 PRODUCT_COPY_FILES += \
