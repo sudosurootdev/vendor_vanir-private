@@ -1,7 +1,0 @@
-#!/system/bin/sh
-
-echo "clearing logs"
-rm /data/*.log
-rm -rf /data/tombstones/*
-rm -rf /data/system/dropbox/*
-echo "logs cleared"
