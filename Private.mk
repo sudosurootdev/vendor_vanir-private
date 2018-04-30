@@ -14,7 +14,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.developer.name=sudosurootdev \
-    ro.sudosurootdev.version="$(VANIR_VERSION)"-"$(shell date +"%Y%m%d-%s")"
+    ro.sudosurootdev.version="$(VANIR_VERSION)"-"$(shell date +"%Y%m%d-%H:%M:%S")"
 
 # Added Files
 PRODUCT_COPY_FILES += \
