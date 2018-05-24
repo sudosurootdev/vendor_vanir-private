@@ -7,6 +7,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.debuggable=1 \
     persist.service.adb.enable=1 \
+    persist.sys.usb.config=adb \
     persist.sys.root_access=3 \
     service.adb.root=1 \
     ro.adb.secure=0
