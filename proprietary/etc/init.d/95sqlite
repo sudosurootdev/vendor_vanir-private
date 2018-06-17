@@ -1,0 +1,68 @@
+#!/system/bin/sh
+# =================================================
+# SQLite3 Vaccuum on init.d script run every 1 week
+# ...or as often as you would like to choose.
+# =================================================
+
+# SQLite database vaccum
+#
+# WHY DO I NEED THIS:
+# Frequent changes (add, change, delete) can cause database files to become fragmented...
+# where data, for a single database table, can be stored on different memory blocks & pages spread out from each other, causing a waste of space and slower reading of the database.
+# Running sqlite3 VACUUM ensures that each database file is written in adjoining memory blocks/pages.
+# VACUUM may also reduce the number of partially filled pages in the database, thereby reducing the total size of the database file.
+
+# Log file location
+LOG_FILE=/data/sqlite.log
+LOCK_FILE=/data/sqlite.lock
+#Interval between SQLite3 runs, in seconds, 604800=1 week
+RUN_EVERY=604800
+
+# Get the last modify date of the Log file, if the file does not exist, set value to 0
+if [ -e $LOCK_FILE ]; then
+	if [ -e $LOG_FILE ]; then
+		LASTRUN=`stat -t $LOG_FILE | awk '{print $14}'`
+	else
+		LASTRUN=0
+	fi;
+else
+	touch $LOCK_FILE
+fi;
+
+# Get current date in epoch format
+CURRDATE=`date +%s`
+
+# Check the interval
+INTERVAL=$(expr $CURRDATE - $LASTRUN)
+
+# If INTERVAL is greater than the RUN_EVERY time period, run the main script.
+if [ $INTERVAL -gt $RUN_EVERY ];
+then
+	if [ -e $LOG_FILE ]; then
+		rm $LOG_FILE;
+	fi;
+       
+	echo "SQLite database VACUUM and REINDEX started at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
+
+	for i in `busybox find / -iname "*.db"`; do
+		/system/xbin/sqlite3 $i 'VACUUM;';
+		resVac=$?
+		if [ $resVac == 0 ]; then
+			resVac="SUCCESS";
+		else
+			resVac="ERRCODE-$resVac";
+		fi;
+		
+		/system/xbin/sqlite3 $i 'REINDEX;';
+		resIndex=$?
+		if [ $resIndex == 0 ]; then
+			resIndex="SUCCESS";
+		else
+			resIndex="ERRCODE-$resIndex";
+		fi;
+		echo "Database $i:  VACUUM=$resVac  REINDEX=$resIndex" | tee -a $LOG_FILE;
+	done
+	  
+	echo "SQLite database VACUUM and REINDEX finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
+fi;
+

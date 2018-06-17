@@ -19,4 +19,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Added Files
 PRODUCT_COPY_FILES += \
-
+    vendor/vanir-private/proprietary/etc/init.d/95sqlite:system/etc/init.d/95sqlite
